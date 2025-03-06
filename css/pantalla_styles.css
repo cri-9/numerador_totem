@@ -1,0 +1,171 @@
+body {
+	margin: 0; /* Elimina el margen predeterminado del body */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente genérica */
+	overflow: hidden; /* Oculta la barra de scroll */
+}
+
+#barraSuperior {
+	background-color: #fcfeff6e;
+	color: rgb(31, 19, 19);
+	background: url('../img_numerador/Header-Mineduc.png') no-repeat center/cover;
+	padding: 10px;
+	height: 20vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Ajusta el contenido a los extremos */
+	font-size: 2.5em;
+}
+
+#logo {
+	height: 80%; /* Ajusta la altura del logo según tus necesidades */
+	margin-right: 20px; /* Agrega un margen derecho para separar del texto */
+}
+
+/* Estilos para la fecha y hora */
+#fechaHora {
+    position: absolute; /* Permite posicionarlo en la pantalla */
+    top: 1px; /* Ajusta la distancia desde la cabecera */
+    right: 20px; /* Pegado al lado derecho con un poco de margen */
+    font-size: 20px; /* Tamaño de fuente más elegante */
+    font-weight: bold;
+    color: white; /* Texto en blanco para contraste */
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 10px 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    text-align: center;
+    min-width: 150px; /* Asegura un tamaño mínimo */
+}
+
+
+/* Estilos generales del contenedor principal */
+#contenidoPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Asegura que el contenido esté más arriba */
+    margin-top: 50px; /* Reduce el margen superior para subirlo */
+    height: auto; /* Ajusta la altura automáticamente */
+}
+
+/* Estilos del título "Número Actual" */
+#contenidoPrincipal h1 {
+    font-size: 28px; /* Tamaño grande */
+    font-weight: bold;
+    color: #222; /* Color oscuro */
+    margin-bottom: 25px; /* Aumentamos el espacio debajo del título */
+}
+
+/* Estilos del número actual */
+#numeroActual {
+    font-size: 60px; /* Tamaño grande */
+    font-weight: bold;
+    color: white; /* Texto blanco */
+    background: linear-gradient(135deg, #0044cc, #002288); /* Degradado azul */
+    padding: 20px 40px;
+    border-radius: 20px; /* Bordes redondeados */
+    display: inline-block;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 30px; /* Ajustamos para que no esté muy pegado */
+}
+
+
+/* Efecto al pasar el mouse */
+#numeroActual:hover {
+    transform: scale(1.1); /* Efecto de agrandado */
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+#container_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #032f86; /* Azul */
+    color: white; /* Texto blanco */
+    text-align: center;
+    line-height: 50px; /* Centra verticalmente el texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+}
+
+#mi-contenedor_footer {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    margin-bottom: 16px; /* Margen inferior */
+}
+
+/* Ocultar en pantallas pequeñas y mostrar en mediana */
+@media (max-width: 768px) {
+    .mi-contenedor {
+        display: none; /* Oculta el contenedor */
+    }
+}
+
+section {
+    display: block; /* Muestra el elemento como bloque */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+}
+
+#barra_footer {
+    background: url('../img_numerador/logotop.jpg') no-repeat;
+    min-width: 220px;
+	top: 0PX;
+    padding-top: 20px;
+	position: relative;
+	left: 10px;
+}
+
+.enlace-mineduc {
+    text-decoration: none; /* Quitar el subrayado */
+    color: white; /* Color del texto */
+    font-weight: 500; /* Equivalente a font_ms500 (peso medio) */
+    font-size: 20px; /* Tamaño de fuente */
+    padding-top: 0px; /* Espaciado superior (equivalente a pt-3 en Bootstrap) */
+    display: inline-block; /* Asegura que el padding superior funcione correctamente */
+}
+
+/* Cambiar color al pasar el mouse */
+.enlace-mineduc:hover {
+    color: #ccc; /* Un gris claro para efecto hover */
+}
+
+/* Estilo para el texto de derechos de autor en footer */
+.redes-sociales {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* permite que los iconos pasen a la siguiente linea en pantallas pequeñas */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 8px; /* Espacio entre los elementos */
+}
+
+/* Alinear los íconos a la derecha en pantallas grandes */
+@media (min-width: 768px) {
+    .redes-sociales {
+        justify-content: flex-end; /* Alinear a la derecha en pantallas medianas en adelante */
+    }
+}
+
+/* Estilos para los enlaces */
+.redes-sociales a {
+    text-decoration: none; /* Quitar subrayado */
+    padding: 12px 8px; /* Espaciado similar a Bootstrap */
+    display: inline-block;
+}
+
+/* Estilos para las imágenes */
+.redes-sociales img {
+    width: 32px; /* Tamaño estándar de ícono */
+    height: 32px;
+    transition: transform 0.2s ease-in-out; /* Efecto suave */
+}
+
+/* Efecto al pasar el mouse */
+.redes-sociales img:hover {
+    transform: scale(1.1); /* Aumentar tamaño ligeramente */
+}

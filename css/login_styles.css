@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+/*    background-image: url('https://via.placeholder.com/1920x1080');*/ /* Cambia por una imagen de paisaje */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-login {
+    position: absolute; /* Posiciona el logo absolutamente */
+    top: 30px; /* Ajusta la posición vertical */
+    left: 30px; /* Ajusta la posición horizontal */
+    width: 200px; /* Ajusta el ancho del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    z-index: 10; /* Asegura que el logo esté encima de otros elementos */
+}
+
+.login-container, .welcome-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 92%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

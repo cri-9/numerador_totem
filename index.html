@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Sistema numerador - By JRichard  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Números</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/control_styles.css">
+</head>
+<body>
+    
+    <div  id="headerBackground"></div> <!-- Fondo de la cabecera -->
+
+    <div id="logo_sup">
+
+        </div>
+            <div id="contenedor">
+                <h1>Ministerio de Educación</h1>
+                    <h2>
+                        <a href="https://mineduc.cl"></h2>
+            </div>	
+       
+    <!-- Mostrar el nombre de usuario -->
+	<div id="nombreUsuario"></div>
+	<a href="logout.php" id="cerrarSesion" onclick="cerrarVentana()">Cerrar Sesión</a>
+    <div id="contenedorCentral">
+        <div>
+            <button id="generarNumero">Generar Número</button>
+            <input type="number" id="nuevoNumero" name="nuevoNumero" required>
+        </div>
+        <button id="actualizarNumero">Actualizar Número</button>
+        <p>Número actual: <span id="numeroActual">0</span></p>
+    </div>
+    
+    <footer id="container_footer">
+        <div id="mi-contenedor_footer">
+            <section>
+                <div id="barra_footer">
+                  <a href="https://mineduc.cl" class="enlace-mineduc" target="_blank">Ministerio de Educación</a>
+                </div>
+            </section>
+            
+            <!--Redes sociales-->
+            <div class="redes-sociales">
+                <a href="http://www.facebook.com/mineduc" target="_blank">
+                    <img src="img_redes/facebook.png" alt="Facebook">
+                </a>
+                <a href="http://twitter.com/mineduc" target="_blank">
+                    <img src="img_redes/x.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/mineducchile" target="_blank">
+                    <img src="img_redes/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.youtube.com/user/mineducchile" target="_blank">
+                    <img src="img_redes/youtube.png" alt="YouTube">
+                </a>
+            </div>
+            
+
+        </div>
+    </footer>
+    
+	<script src="js/control.js"></script>
+</body>
+</html>

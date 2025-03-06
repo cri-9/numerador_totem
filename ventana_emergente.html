@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abre Control Numerador</title>
+</head>
+<body>
+    <script>
+        function abrirVentana(url) {
+            const ancho = window.screen.width * 0.35;
+            const alto = window.screen.height * 0.25;
+
+            // Calcula la posición para la esquina inferior derecha
+            const izquierda = window.screen.width - ancho;
+            const arriba = window.screen.height - alto;
+
+            const opciones = `width=${ancho},height=${alto},left=${izquierda},top=${arriba},menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no`;
+            window.open(url, 'ventanaEmergente', opciones);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            abrirVentana('index.html'); // Llama a la función al cargar el DOM
+        });
+    </script>
+</body>
+</html>

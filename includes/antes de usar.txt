@@ -1,0 +1,1 @@
+En el script db.php hay que colocar las credenciales del usario con privilegios sobre la base de datos

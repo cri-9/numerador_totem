@@ -1,0 +1,267 @@
+ * {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-family: 'gobCL';
+    box-sizing: border-box;
+    text-decoration: none;
+ 
+ /* Contenedor del header */
+ #headerBackground {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 150px; /* Ajusta la altura según sea necesario */
+	background: url('../img_numerador/Header-Mineduc.png') no-repeat center/cover;
+	opacity: 0.5; /* Ajusta la transparencia */
+	z-index: -1; /* Para que quede detrás del contenido */
+}
+
+#logo_sup {
+	position: relative;
+	text-align: center;
+	padding: 20px;
+	z-index: 1;
+}
+p {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+	font-size: 14px;
+}
+input[type="number"] {
+  width: 40px; /* Ajusta el ancho según tus necesidades */
+  padding: 5px;
+  margin: 5px;
+  appearance: textfield; /* Para Safari */
+  -webkit-appearance: textfield; /* Para Chrome y Safari */
+  -moz-appearance: textfield; /* Para Firefox */
+  text-align: right; /* Alinea el texto y el cursor a la derecha */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#logo_sup {
+	background: url('../img_numerador/logotop.jpg') no-repeat;
+    min-width: 220px;
+	top: 10PX;
+    padding-top: 20px;
+	position: relative;
+	left: 10px;
+}
+
+#contenedor {
+	display: flex; /* Activa el modelo de caja flexible */
+	justify-content: flex-start; /* Alinea los elementos a la izquierda */
+	align-items: center; /* Centra verticalmente los elementos */ 
+	height: 2vh; /* Ajusta la altura al 100% del viewport */
+	font-size: 12px;
+	color: #003366;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	
+	
+
+}
+#barraTitulo h1 {
+	background-color: #0044cc;
+	padding: 20px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+/* Logo Contenedor */
+		
+#cerrarSesion {
+	position: absolute;
+	top: 10px; /* Ajusta la posición vertical según tus necesidades */
+	right: 30px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+	font-size: 14px;
+	color: #007bff; /* Color azul para un enlace */
+	text-decoration: none; /* Elimina el subrayado predeterminado */
+	margin-bottom: 30px; /* Agrega un margen inferior de 40px (dos líneas de espacio) */
+}
+#cerrarSesion:hover {
+	text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+#contenedorCentral {
+    display: flex;       /* Flexbox para alinear elementos */
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    align-items: center;  /* Centra los elementos horizontalmente */
+    gap: 40px;           /* Espacio entre los elementos */
+    padding: 30px;
+    background: #f3f3f3; /* Fondo suave */
+    border-radius: 15px;  /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    width: 400px;        /* Ancho del contenedor */
+    margin: 140px auto;      /* Centrar el contenedor */
+}
+#generarNumero, #nuevoNumero {
+    display: inline-block;  /* Permite alinear los elementos juntos */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #0044cc; /* Borde azul */
+    border-radius: 10px;
+    margin-right: 10px;     /* Espacio entre botón e input */
+    outline: none;
+}
+#actualizarNumero {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: #0044cc; /* Color de fondo azul */
+    color: white;        /* Texto blanco */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;      /* Manito al pasar el mouse */
+    transition: background 0.3s; /* Transición suave */
+}
+#actualizarNumero:hover {
+    background: #002288; /* Cambio de color al pasar el mouse */
+}
+
+/* Centrar y estilizar el contenedor del número */
+#contenedorCentral p {
+    text-align: center;
+    font-size: 20px; /* Tamaño más grande */
+    font-weight: bold;
+    color: #444; /* Color gris oscuro */
+    margin-top: 30px; /* Espaciado superior */
+}
+
+#numeroActual {
+	display: block;
+    font-size: 100px;    /* Tamaño más grande */
+    font-weight: bold;  /* Texto en negrita */
+    text-align: center; /* Centrado */
+    color: #0a368d;     /* Azul */
+    margin-top: 10px;
+}
+
+#nombreUsuario {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+	font-size: 14px;
+	color: #555;
+}
+
+#nombreUsuario, #cerrarSesion {
+	position: static; /* Cambia la posición a estática para que fluyan con el contenido */
+	text-align: right; /* Alinea el texto a la derecha */
+	/*margin-top: 5px;*/ /* Agrega un margen superior para separarlos de la barra de título */
+	margin-right: 10px;
+}
+
+#cerrarSesion {
+    position: absolute;
+    top: 110px; /* Margen desde arriba */
+    right: 20px; /* Margen desde la derecha */
+    background-color: #cc0000b7; /* Rojo */
+    color: white; /* Texto en blanco */
+    padding: 10px 15px;
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#cerrarSesion:hover {
+    background-color: #990000; /* Rojo más oscuro al pasar el mouse */
+}
+
+#container_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #032f86; /* Azul */
+    color: white; /* Texto blanco */
+    text-align: center;
+    line-height: 50px; /* Centra verticalmente el texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+}
+
+#mi-contenedor_footer {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    margin-bottom: 16px; /* Margen inferior */
+}
+
+/* Ocultar en pantallas pequeñas y mostrar en mediana */
+@media (max-width: 768px) {
+    .mi-contenedor {
+        display: none; /* Oculta el contenedor */
+    }
+}
+
+section {
+    display: block; /* Muestra el elemento como bloque */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+}
+
+#barra_footer {
+    background: url('../img_numerador/logotop.jpg') no-repeat;
+    min-width: 220px;
+	top: 0PX;
+    padding-top: 20px;
+	position: relative;
+	left: 10px;
+}
+
+.enlace-mineduc {
+    text-decoration: none; /* Quitar el subrayado */
+    color: white; /* Color del texto */
+    font-weight: 500; /* Equivalente a font_ms500 (peso medio) */
+    font-size: 20px; /* Tamaño de fuente */
+    padding-top: 0px; /* Espaciado superior (equivalente a pt-3 en Bootstrap) */
+    display: inline-block; /* Asegura que el padding superior funcione correctamente */
+}
+
+/* Cambiar color al pasar el mouse */
+.enlace-mineduc:hover {
+    color: #ccc; /* Un gris claro para efecto hover */
+}
+
+/* Estilo para el texto de derechos de autor en footer */
+.redes-sociales {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* permite que los iconos pasen a la siguiente linea en pantallas pequeñas */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 8px; /* Espacio entre los elementos */
+}
+
+/* Alinear los íconos a la derecha en pantallas grandes */
+@media (min-width: 768px) {
+    .redes-sociales {
+        justify-content: flex-end; /* Alinear a la derecha en pantallas medianas en adelante */
+    }
+}
+
+/* Estilos para los enlaces */
+.redes-sociales a {
+    text-decoration: none; /* Quitar subrayado */
+    padding: 12px 8px; /* Espaciado similar a Bootstrap */
+    display: inline-block;
+}
+
+/* Estilos para las imágenes */
+.redes-sociales img {
+    width: 32px; /* Tamaño estándar de ícono */
+    height: 32px;
+    transition: transform 0.2s ease-in-out; /* Efecto suave */
+}
+
+/* Efecto al pasar el mouse */
+.redes-sociales img:hover {
+    transform: scale(1.1); /* Aumentar tamaño ligeramente */
+}
+ }
