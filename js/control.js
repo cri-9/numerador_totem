@@ -104,4 +104,4 @@ obtenerUltimoNumero(); // Llama a la función al cargar la página
 
 function cerrarVentana() {
 	window.close();
-}
+}});
