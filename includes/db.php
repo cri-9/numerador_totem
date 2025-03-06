@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";// Si usas XAMPP, generalmente es "localhost"
-$username = ""; // Cambia esto si tienes otro usuario en MySQL
-$password = ""; // Si estás en XAMPP, normalmente la contraseña está vacía
-$database = "sistema_numeros"; // Nombre correcto de tu base de datos
+$servername = "lnumerador_db";// Si usas XAMPP, generalmente es "localhost"
+$username = "if0_38461337"; // Cambia esto si tienes otro usuario en MySQL
+$password = "SuHueiF4vC"; // Si estás en XAMPP, normalmente la contraseña está vacía
+$database = "if0_38461337_numerador_db"; // Nombre correcto de tu base de datos
 
 $conn = new mysqli($servername, $username, $password, $database);
 
