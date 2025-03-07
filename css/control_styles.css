@@ -272,4 +272,11 @@ section {
 .redes-sociales img:hover {
     transform: scale(1.1); /* Aumentar tamaño ligeramente */
 }
+
+@media (max-width: 600px) { /* Ajusta el tamaño según necesites */
+    footer {
+        display: none;
+    }
+}
  }
+
