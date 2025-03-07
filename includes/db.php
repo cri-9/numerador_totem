@@ -1,14 +1,15 @@
 <?php
-$servername = "lnumerador_db";// Si usas XAMPP, generalmente es "localhost"
-$username = "if0_38461337"; // Cambia esto si tienes otro usuario en MySQL
-$password = "SuHueiF4vC"; // Si estás en XAMPP, normalmente la contraseña está vacía
-$database = "if0_38461337_numerador_db"; // Nombre correcto de tu base de datos
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "sistema_numeros";
 
-$conn = new mysqli($servername, $username, $password, $database);
+	// Crear conexión
+	$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+	// Verificar conexión
+	if ($conn->connect_error) {
+		http_response_code(500); // Error del servidor
+		die(json_encode(['success' => false, 'error' => 'Error de conexión: ' . $conn->connect_error]));
+	}
 ?>
-
