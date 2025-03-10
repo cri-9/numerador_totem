@@ -80,3 +80,103 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+#container_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #032f86; /* Azul */
+    color: white; /* Texto blanco */
+    text-align: center;
+    line-height: 50px; /* Centra verticalmente el texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplica la misma fuente */
+}
+
+#mi-contenedor_footer {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    margin-bottom: 16px; /* Margen inferior */
+}
+
+/* Ocultar en pantallas pequeñas y mostrar en mediana */
+@media (max-width: 768px) {
+    .mi-contenedor {
+        display: none; /* Oculta el contenedor */
+    }
+}
+
+section {
+    display: block; /* Muestra el elemento como bloque */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+}
+
+#barra_footer {
+    background: url('../img_numerador/logotop.jpg') no-repeat;
+    min-width: 220px;
+	top: 0PX;
+    padding-top: 20px;
+	position: relative;
+	left: 10px;
+}
+
+.enlace-mineduc {
+    text-decoration: none; /* Quitar el subrayado */
+    color: white; /* Color del texto */
+    font-weight: 500; /* Equivalente a font_ms500 (peso medio) */
+    font-size: 20px; /* Tamaño de fuente */
+    padding-top: 0px; /* Espaciado superior (equivalente a pt-3 en Bootstrap) */
+    display: inline-block; /* Asegura que el padding superior funcione correctamente */
+}
+
+/* Cambiar color al pasar el mouse */
+.enlace-mineduc:hover {
+    color: #ccc; /* Un gris claro para efecto hover */
+}
+
+/* Estilo para el texto de derechos de autor en footer */
+.redes-sociales {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: row; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* permite que los iconos pasen a la siguiente linea en pantallas pequeñas */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 8px; /* Espacio entre los elementos */
+}
+
+/* Alinear los íconos a la derecha en pantallas grandes */
+@media (min-width: 768px) {
+    .redes-sociales {
+        justify-content: flex-end; /* Alinear a la derecha en pantallas medianas en adelante */
+    }
+}
+
+/* Estilos para los enlaces */
+.redes-sociales a {
+    text-decoration: none; /* Quitar subrayado */
+    padding: 12px 8px; /* Espaciado similar a Bootstrap */
+    display: inline-block;
+}
+
+/* Estilos para las imágenes */
+.redes-sociales img {
+    width: 32px; /* Tamaño estándar de ícono */
+    height: 32px;
+    transition: transform 0.2s ease-in-out; /* Efecto suave */
+}
+
+/* Efecto al pasar el mouse */
+.redes-sociales img:hover {
+    transform: scale(1.1); /* Aumentar tamaño ligeramente */
+}
+
+@media (max-width: 600px) { /* Ajusta el tamaño según necesites */
+    footer {
+        display: none;
+    }
+}
+
+ 
