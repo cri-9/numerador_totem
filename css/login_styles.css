@@ -12,19 +12,29 @@ body {
     align-items: center;
 }
 
+hr{
+    display: block; /* Muestra el elemento como bloque */
+    margin-top: 1px;  /* Reduce el espacio arriba */    
+    margin-bottom: 30px; /* Reduce el espacio abajo */
+    border-top: 0 solid #eee; /* Elimina el borde predeterminado */
+    height: 1px; /* Grosor de la línea */
+    background-color: rgb(104, 103, 103); /* Color de la línea */
+}
+
 #logo-login {
-    position: absolute; /* Posiciona el logo absolutamente */
-    top: 30px; /* Ajusta la posición vertical */
-    left: 30px; /* Ajusta la posición horizontal */
-    width: 200px; /* Ajusta el ancho del logo */
-    height: auto; /* Mantiene la proporción del logo */
-    z-index: 10; /* Asegura que el logo esté encima de otros elementos */
+    position: relative;
+    margin-top: 10px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+    top: 10px;
+    width: 100px;
+
 }
 
 .login-container, .welcome-container {
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 60px; /* Espacio inferior */
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
@@ -32,6 +42,14 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    text-shadow: 3px 2px 4px rgba(150, 150, 150, 1); /* Sombra del texto */
+    color: #666; /* Color del texto */
+}
+p {
+    margin-bottom: 20px;
+    color: #dd4b39; /* Color del texto */  
+    font-weight: 700; /* Peso de la fuente */
+
 }
 
 .form-group {
@@ -45,20 +63,24 @@ label {
 }
 
 input {
-    width: 92%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 92%; /* Ancho del 92% */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio inferior */
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 15px;
+    margin-bottom: 10px; /* Espacio inferior */
+    margin-top: 15px; /* Espacio superior */
+    background-color: #01478d; /* Azul */
+    border-color: #010b15; /* Borde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de la mano */
 }
 
 button:hover {

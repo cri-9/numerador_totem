@@ -6,21 +6,21 @@
     <link rel="stylesheet" href="css/login_styles.css">
     <script src="js/login.js" defer></script>
 </head>
-<div class="login-container">
 <body>
 
-
+<div class="login-container">
 <img src="img/mineduc.jpg" alt="Logo Corporativo" id="logo-login">
-        <h1>Autenticación</h1>
-        
-        <form id="loginForm" action="backend/auth.php" method="post">
+        <h1>Bienvenido</h1>
+        <hr>
+        <p>Ingrese sus credenciales</p>
+         <form id="loginForm" action="backend/auth.php" method="post">
              <div class="form-group">
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
+              <!--  <label for="usuario">Usuario:</label> -->
+                <input type="text"  placeholder="Usuario"  id="usuario" name="usuario" required>
             </div>
             <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+               <!-- <label for="password">Contraseña:</label> -->
+                <input type="password" placeholder="Contraseña"  id="password" name="password" required>
             </div>
             <button type="submit">Ingresar</button>
         </form>
