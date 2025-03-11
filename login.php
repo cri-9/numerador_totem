@@ -14,6 +14,7 @@
         <h1>Bienvenido</h1>
         <hr>
         <p>Ingrese sus credenciales</p>
+        
          <form id="loginForm" action="backend/auth.php" method="post">
              <div class="form-group">              
                 <i class="fas fa-user" ></i>

@@ -24,14 +24,21 @@
     <div id="nombreUsuario"></div>
     <a href="logout.php" id="cerrarSesion" onclick="cerrarVentana()">Cerrar Sesión</a>
     
+    <!--Contenedor de generador, actualizador de numero-->
     <div id="contenedorCentral">
         <div>
+            <!--Grupo de Botones Input-->
+            <div id="grupoBotones">
             <button id="generarNumero">Generar Número</button>
-            <input type="number" id="nuevoNumero" name="nuevoNumero" required>
+            <input type="number" id="nuevoNumero" name="nuevoNumero" required>        
+            <button id="actualizarNumero">Actualizar Número</button>
+            </div>
+            <!--Sección del número actual-->
+            <div id="numeroContainer">
+                <p>Número actual</p>
+                <span id="numeroActual">0</span>
+            </div>
         </div>
-        <button id="actualizarNumero">Actualizar Número</button>
-        <p>Número actual: <span id="numeroActual">0</span></p>
-    </div>
     
 <!--Footer-->
     <footer id="container_footer">
@@ -61,5 +68,6 @@
     </footer>
 
     <script src="js/control.js"></script>
+    <script src="js/sinfooter.js"></script>
 </body>
 </html>
