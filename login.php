@@ -5,6 +5,7 @@
     <title>Login Corporativo</title>
     <link rel="stylesheet" href="css/login_styles.css">
     <script src="js/login.js" defer></script>
+    <script src="https://kit.fontawesome.com/fba70c88c7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -14,12 +15,12 @@
         <hr>
         <p>Ingrese sus credenciales</p>
          <form id="loginForm" action="backend/auth.php" method="post">
-             <div class="form-group">
-              <!--  <label for="usuario">Usuario:</label> -->
+             <div class="form-group">              
+                <i class="fas fa-user" ></i>
                 <input type="text"  placeholder="Usuario"  id="usuario" name="usuario" required>
             </div>
-            <div class="form-group">
-               <!-- <label for="password">Contraseña:</label> -->
+            <div class="form-group">               
+                <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Contraseña"  id="password" name="password" required>
             </div>
             <button type="submit">Ingresar</button>
