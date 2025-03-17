@@ -26,25 +26,38 @@ function numeroAPalabras(numero) {
 }
 
 // Función para anunciar el número en voz alta
-async function anunciarNumero(numero) {
+function anunciarNumero(numero) {
     if ('speechSynthesis' in window) {
-        console.log("Anunciando número:", numero);
         if (numero) {
             try {
-                const voces = await new Promise(resolve => {
-                    speechSynthesis.onvoiceschanged = () => {
-                        resolve(speechSynthesis.getVoices());
-                    };
-                });
-                console.log("Voces disponibles:", voces);
-                const vozEnEspanol = voces.find(voz => voz.lang === 'es-ES') || voces[0];
-                const texto = "Número " + numeroAPalabras(numero);
-                const utterance = new SpeechSynthesisUtterance(texto);
-                utterance.voice = vozEnEspanol;
-                utterance.lang = vozEnEspanol.lang;
-                utterance.onstart = () => console.log("Comenzó a anunciar el número");
-                utterance.onend = () => console.log("Finalizó el anuncio");
-                speechSynthesis.speak(utterance);
+                speechSynthesis.onvoiceschanged = function() {
+                    const voces = speechSynthesis.getVoices();
+                    let vozEnEspanol = voces.find(voz => voz.lang === 'es-ES');
+
+                    // Verificar si se encontró una voz en español
+                    if (typeof vozEnEspanol !== "undefined") {
+                        const texto = "Número " + numero;
+                        const utterance = new SpeechSynthesisUtterance(texto);
+                        utterance.voice = vozEnEspanol;
+                        utterance.lang = vozEnEspanol.lang;
+                        utterance.onstart = () => console.log("Comenzó a anunciar el número");
+                        utterance.onend = () => console.log("Finalizó el anuncio");
+                        speechSynthesis.speak(utterance);
+                    } else {
+                        // Solución alternativa: usar la primera voz disponible o mostrar un mensaje de error
+                        if (voces.length > 0) {
+                            const texto = "Número " + numero;
+                            const utterance = new SpeechSynthesisUtterance(texto);
+                            utterance.voice = voces[0]; // Usar la primera voz disponible
+                            utterance.lang = voces[0].lang;
+                            utterance.onstart = () => console.log("Comenzó a anunciar el número (voz alternativa)");
+                            utterance.onend = () => console.log("Finalizó el anuncio (voz alternativa)");
+                            speechSynthesis.speak(utterance);
+                        } else {
+                            console.error("No se encontraron voces disponibles.");
+                        }
+                    }
+                };
             } catch (error) {
                 console.error("Error al anunciar el número:", error);
             }
