@@ -1,35 +1,25 @@
 <?php
-
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_WARNING); // Reportar todos los errores excepto los warnings.
 ini_set('display_errors', 1);
 
-// incrementar_numero.php
 session_start();
-
 header('Content-Type: application/json');
 
-// Verificar si el usuario está logueado
 if (!isset($_SESSION['usuario'])) {
     http_response_code(401);
     die(json_encode(['success' => false, 'error' => 'Usuario no autenticado']));
 }
 
-require_once '../includes/db.php'; // Verifica que esta ruta sea correcta
-
-// Verifica si la conexión es correcta
-if ($conn->connect_error) {
-    die(json_encode(['success' => false, 'error' => 'Error de conexión: ' . $conn->connect_error]));
+if (!isset($_SESSION['modulo'])) {
+    die(json_encode(['success' => false, 'error' => 'Modulo no definido']));
 }
 
-// Verifica que se envió el usuario correctamente
-if (!isset($_POST['usuario']) || empty($_POST['usuario'])) {
-    die(json_encode(['success' => false, 'error' => 'Usuario no proporcionado']));
-}
+require_once '../includes/db.php';
 
-$usuario = $conn->real_escape_string($_POST['usuario']); // Evita inyección SQL
+$usuario = $_SESSION['usuario'];
+$modulo = $_SESSION['modulo'];
 
-// Obtener el número actual
-$sql = "SELECT numero FROM numeros WHERE id = 1";
+$sql = "SELECT numero FROM numeros WHERE usuario = '$usuario'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,15 +27,16 @@ if ($result->num_rows > 0) {
     $numero = $row['numero'] + 1;
 } else {
     $numero = 1;
+    $sql_insert_usuario = "INSERT INTO numeros (usuario, numero) VALUES ('$usuario', 1)";
+    $conn->query($sql_insert_usuario);
 }
 
-// Actualizar el número en la base de datos
-$sql_update_numero = "UPDATE numeros SET numero = $numero WHERE id = 1";
+$sql_update_numero = "UPDATE numeros SET numero = $numero WHERE usuario = '$usuario'";
 if ($conn->query($sql_update_numero) === TRUE) {
-    // Insertar la atención en la tabla atenciones
-    $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', $numero)";
+    $numero_con_modulo = $modulo . $numero;
+    $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', '$numero_con_modulo')";
     if ($conn->query($sql_insert_atencion) === TRUE) {
-        echo json_encode(['success' => true, 'numero' => $numero]);
+        echo json_encode(['success' => true, 'numero' => $numero_con_modulo]);
     } else {
         echo json_encode(['success' => false, 'error' => 'Error al insertar atención: ' . $conn->error]);
     }

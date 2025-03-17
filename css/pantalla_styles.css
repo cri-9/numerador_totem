@@ -17,19 +17,23 @@ body {
 }
 
 #logo {
-	height: 80%; /* Ajusta la altura del logo según tus necesidades */
+	height: 13%; /* Ajusta la altura del logo según tus necesidades */
+    top: 8px; /* Ajusta la posición vertical */
+    left: 20px; /* Ajusta la posición horizontal */
+    position: absolute; /* Permite posicionarlo en la pantalla */
 	margin-right: 20px; /* Agrega un margen derecho para separar del texto */
+    opacity: 0.5; /* Opacidad del logo */
 }
 
 /* Estilos para la fecha y hora */
 #fechaHora {
     position: absolute; /* Permite posicionarlo en la pantalla */
-    top: 1px; /* Ajusta la distancia desde la cabecera */
-    right: 20px; /* Pegado al lado derecho con un poco de margen */
+    top: -80px;  /*Ajusta la distancia desde la cabecera */
+    right: 0px; /* Pegado al lado derecho con un poco de margen */
     font-size: 20px; /* Tamaño de fuente más elegante */
     font-weight: bold;
     color: white; /* Texto en blanco para contraste */
-    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    background: rgba(0, 0, 0, 0.4); /* Fondo negro semitransparente */
     padding: 10px 20px;
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
@@ -50,7 +54,7 @@ body {
 
 /* Estilos del título "Número Actual" */
 #contenidoPrincipal h1 {
-    font-size: 28px; /* Tamaño grande */
+    font-size: 40px; /* Tamaño grande */
     font-weight: bold;
     color: #222; /* Color oscuro */
     margin-bottom: 25px; /* Aumentamos el espacio debajo del título */
@@ -58,16 +62,16 @@ body {
 
 /* Estilos del número actual */
 #numeroActual {
-    font-size: 60px; /* Tamaño grande */
-    font-weight: bold;
+    font-size: 100px; /* Tamaño grande */
+    font-weight: bold; /* Texto en negrita */
     color: white; /* Texto blanco */
     background: linear-gradient(135deg, #0044cc, #002288); /* Degradado azul */
-    padding: 20px 40px;
+    padding: 50px 85px; /* Espaciado interno */
     border-radius: 20px; /* Bordes redondeados */
-    display: inline-block;
+    display: inline-block; /* Ajusta el ancho al contenido */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto suave */
     margin-top: 30px; /* Ajustamos para que no esté muy pegado */
 }
 

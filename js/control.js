@@ -15,6 +15,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $("#numeroActual").text(response.numero);
+                    anunciarNumero(response.numero); // Anunciar el número con voz
                 } else {
                     console.error("Error en el servidor:", response.error);
                 }
@@ -44,8 +45,10 @@ $(document).ready(function() {
                 nuevoNumero: nuevoNumero
             },
             success: function(response) {
-                if (response.success) {
-                    $('#numeroActual').text(nuevoNumero);
+                console.log("Respuesta AJAX (actualizarNumero):", response); // Agregar log
+                if (response.success && response.numero) {
+                    $('#numeroActual').text(response.numero);
+                    anunciarNumero(response.numero);
                     $('#nuevoNumero').val('');
                 } else {
                     alert('Error: ' + response.error);
@@ -56,6 +59,19 @@ $(document).ready(function() {
             }
         });
     });
+
+   // Función para anunciar el número con voz
+   function anunciarNumero(numero) {
+    console.log("Anunciando número:", numero); // Agregar log
+    if (numero) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(numero);
+        utterance.lang = 'es-ES';
+        synth.speak(utterance);
+    } else {
+        console.error("Número indefinido para la función anunciarNumero.");
+    }
+}
 
     // Obtener el nombre de usuario
     function obtenerNombreUsuario() {
@@ -88,7 +104,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.success) {
-                    $('#numeroActual').text(response.numero);
+                    $('#numeroActual').text(response.numero); // Mostrar número con módulo
                 } else {
                     console.error('Error al obtener el último número:', response.error);
                 }

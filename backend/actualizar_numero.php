@@ -14,22 +14,23 @@ if (!isset($_SESSION['usuario'])) {
 
 require_once '../includes/db.php';
 
-$usuario = $_POST['usuario'];
+$usuario = $_SESSION['usuario'];
+$modulo = $_SESSION['modulo'];
 $nuevoNumero = $_POST['nuevoNumero'];
 
-// Actualizar nuevo número en la tabla numeros
-$sql_update_numero = "UPDATE numeros SET numero = ".$conn->real_escape_string($nuevoNumero)." WHERE id = 1";
+// Actualizar el número en la tabla numeros para el usuario
+$sql_update_numero = "UPDATE numeros SET numero = " . $conn->real_escape_string($nuevoNumero) . " WHERE usuario = '$usuario'";
 
 if ($conn->query($sql_update_numero) === TRUE) {
-    // Insertar la atención en la tabla atenciones
-    $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', $nuevoNumero)";
+    // Insertar la atención en la tabla atenciones con el módulo
+    $numero_con_modulo = $modulo . $nuevoNumero;
+    $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', '$numero_con_modulo')";
 
     if ($conn->query($sql_insert_atencion) === TRUE) {
-        echo json_encode(['success' => true, 'numero' => $nuevoNumero]);
+        echo json_encode(['success' => true, 'numero' => $numero_con_modulo]);
     } else {
         echo json_encode(['success' => false, 'error' => 'Error al insertar atención: ' . $conn->error]);
     }
-
 } else {
     echo json_encode(['success' => false, 'error' => 'Error al insertar número: ' . $conn->error]);
 }
