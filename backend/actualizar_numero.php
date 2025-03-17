@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // Actualizar_numero.php
@@ -23,7 +22,7 @@ $sql_update_numero = "UPDATE numeros SET numero = " . $conn->real_escape_string(
 
 if ($conn->query($sql_update_numero) === TRUE) {
     // Insertar la atención en la tabla atenciones con el módulo
-    $numero_con_modulo = $modulo . $nuevoNumero;
+    $numero_con_modulo = $modulo . ' - ' . $nuevoNumero;
     $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', '$numero_con_modulo')";
 
     if ($conn->query($sql_insert_atencion) === TRUE) {

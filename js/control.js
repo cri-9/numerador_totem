@@ -60,18 +60,18 @@ $(document).ready(function() {
         });
     });
 
-   // Función para anunciar el número con voz
-   function anunciarNumero(numero) {
-    console.log("Anunciando número:", numero); // Agregar log
-    if (numero) {
-        const synth = window.speechSynthesis;
-        const utterance = new SpeechSynthesisUtterance(numero);
-        utterance.lang = 'es-ES';
-        synth.speak(utterance);
-    } else {
-        console.error("Número indefinido para la función anunciarNumero.");
+    // Función para anunciar el número con voz
+    function anunciarNumero(numero) {
+        console.log("Anunciando número:", numero); // Agregar log
+        if (numero) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(numero);
+            utterance.lang = 'es-ES';
+            synth.speak(utterance);
+        } else {
+            console.error("Número indefinido para la función anunciarNumero.");
+        }
     }
-}
 
     // Obtener el nombre de usuario
     function obtenerNombreUsuario() {

@@ -1,7 +1,7 @@
 <?php
 // Datos del servidor Active Directory
-$domain = 'mineduc.cl';  // Cambia esto por tu dominio
-$port = 389;  // Puerto LDAP por defecto
+$domain = 'mineduc.cl'; // Cambia esto por tu dominio
+$port = 389; // Puerto LDAP por defecto
 
 // Obtener credenciales del formulario
 $usuario = $_POST['usuario'];
@@ -33,7 +33,23 @@ $ldapbind = @ldap_bind($ldapconn, "$usuario@$domain", $password);
 if ($ldapbind) {
     session_start();
     $_SESSION['usuario'] = $usuario;
-    $_SESSION['modulo'] = strtoupper(substr($usuario, 0, 1)); // Obtener la primera letra y convertirla a mayúscula
+    // Asignar letras fijas
+    switch ($usuario) {
+        case 'usuarioA':
+            $_SESSION['modulo'] = 'A';
+            break;
+        case 'usuarioB':
+            $_SESSION['modulo'] = 'B';
+            break;
+        case 'usuarioC':
+            $_SESSION['modulo'] = 'C';
+            break;
+        case 'usuarioD':
+            $_SESSION['modulo'] = 'D';
+            break;
+        default:
+            $_SESSION['modulo'] = strtoupper(substr($usuario, 0, 1)); // Obtener la primera letra y convertirla a mayúscula
+    }
     header("Location: ../ventana_emergente.html");
     exit();
 } else {

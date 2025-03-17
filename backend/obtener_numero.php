@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $numero_con_modulo = $modulo . $row['numero'];
+    $numero_con_modulo = $modulo . ' - ' . $row['numero'];
     echo json_encode(['success' => true, 'numero' => $numero_con_modulo]);
 } else {
     echo json_encode(['success' => false, 'error' => 'No se encontró el número para el usuario']);

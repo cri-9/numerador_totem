@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 
 $sql_update_numero = "UPDATE numeros SET numero = $numero WHERE usuario = '$usuario'";
 if ($conn->query($sql_update_numero) === TRUE) {
-    $numero_con_modulo = $modulo . $numero;
+    $numero_con_modulo = $modulo . ' - ' . $numero;
     $sql_insert_atencion = "INSERT INTO atenciones (usuario, numero) VALUES ('$usuario', '$numero_con_modulo')";
     if ($conn->query($sql_insert_atencion) === TRUE) {
         echo json_encode(['success' => true, 'numero' => $numero_con_modulo]);
