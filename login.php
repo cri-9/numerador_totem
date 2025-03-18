@@ -38,7 +38,7 @@
                 </div>
             </section>
             
-            <!--Redes sociales-->
+            <!--Redes sociales
             <div class="redes-sociales">
                 <a href="http://www.facebook.com/mineduc" target="_blank">
                     <img src="img_redes/facebook.png" alt="Facebook">
@@ -53,6 +53,7 @@
                     <img src="img_redes/youtube.png" alt="YouTube">
                 </a>
             </div>
+            -->
         </div>
     </footer>
     </div>
