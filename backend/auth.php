@@ -1,4 +1,4 @@
-<?php
+<?php 
 // Datos del servidor Active Directory
 $domain = 'mineduc.cl'; // Cambia esto por tu dominio
 $port = 389; // Puerto LDAP por defecto
@@ -33,6 +33,20 @@ $ldapbind = @ldap_bind($ldapconn, "$usuario@$domain", $password);
 if ($ldapbind) {
     session_start();
     $_SESSION['usuario'] = $usuario;
+
+    // Buscar el nombre completo del usuario en LDAP
+    $search_base = "dc=mineduc,dc=cl"; // Ajusta esto según tu estructura LDAP
+    $search_filter = "(sAMAccountName=$usuario)";
+    $search = ldap_search($ldapconn, $search_base, $search_filter, ["displayName"]);
+    $entries = ldap_get_entries($ldapconn, $search);
+
+    // Si se encuentra el nombre en LDAP, guardarlo en la sesión
+    if ($entries["count"] > 0 && isset($entries[0]["displayname"][0])) {
+        $_SESSION['nombre_completo'] = $entries[0]["displayname"][0];
+    } else {
+        $_SESSION['nombre_completo'] = ucfirst($usuario); // Si no hay nombre, usar usuario con primera letra en mayúscula
+    }
+
     // Asignar letras fijas
     switch ($usuario) {
         case 'usuarioA':
@@ -50,6 +64,7 @@ if ($ldapbind) {
         default:
             $_SESSION['modulo'] = strtoupper(substr($usuario, 0, 1)); // Obtener la primera letra y convertirla a mayúscula
     }
+
     header("Location: ../ventana_emergente.html");
     exit();
 } else {

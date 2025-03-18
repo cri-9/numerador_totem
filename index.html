@@ -82,5 +82,19 @@
             window.location.href = 'logout.php';
         }
         </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("verificar_sesion.php")
+            .then(response => response.json())
+            .then(data => {
+                if (data.sesion_activa) {
+                    document.getElementById("nombreUsuario").textContent = "Bienvenido, " + data.nombre_completo;
+                } else {
+                    window.location.href = "login.php";
+                }
+            });
+    });
+    </script>
 </body>
 </html>
