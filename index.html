@@ -20,9 +20,10 @@
         </h2>
     </div>	
 
-    <!-- Mostrar el nombre de usuario -->
-    <div id="nombreUsuario"></div>
-    <a href="logout.php" id="cerrarSesion" onclick="cerrarVentana()">Cerrar Sesión</a>
+    <<!-- Mostrar el nombre de usuario -->
+<div id="nombreUsuario"></div>
+<a href="logout.php" id="cerrarSesion" onclick="cerrarTodasLasVentanas(); return false;">Cerrar Sesión</a>
+
     
     <!--Contenedor de generador, actualizador de numero-->
     <div id="contenedorCentral">
@@ -70,5 +71,16 @@
 
     <script src="js/control.js"></script>
     <script src="js/sinfooter.js"></script>
+    <script>
+        function cerrarTodasLasVentanas() {
+            // Si la ventana emergente sigue abierta, redirigirla a logout.php
+            if (window.opener && !window.opener.closed) {
+                window.opener.location.href = 'logout.php';
+            }
+        
+            // Redirigir la ventana actual a logout.php
+            window.location.href = 'logout.php';
+        }
+        </script>
 </body>
 </html>

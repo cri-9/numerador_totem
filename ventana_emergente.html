@@ -23,5 +23,23 @@
             abrirVentana('index.html'); // Llama a la función al cargar el DOM
         });
     </script>
+    
+    <script>
+        setInterval(function() {
+            fetch('verificar_sesion.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.sesion_activa) {
+                        if (window.opener) {
+                            window.opener.location.href = "login.php"; // Redirigir ventana principal
+                        }
+                        window.close(); // Intentar cerrar esta ventana
+                    }
+                });
+        }, 3000); // Verifica cada 3 segundos
+        </script>
+        
+        
+        
 </body>
 </html>

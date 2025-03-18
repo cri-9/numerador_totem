@@ -52,5 +52,35 @@
     </footer>
 
 	<script src="js/pantalla.js"></script>
+    <script>
+        function cerrarPantalla() {
+            if (localStorage.getItem('cerrarPantalla') === 'true') {
+                localStorage.removeItem('cerrarPantalla'); // Limpiar el estado
+                window.close(); // Intentar cerrar la ventana
+        
+                // Si no se cierra, redirigir a login.php como última opción
+                setTimeout(() => {
+                    window.location.href = "login.php";
+                }, 2000);
+            }
+        }
+        
+        // Comprobar cada 3 segundos si la sesión se cerró
+        setInterval(function() {
+            fetch('verificar_sesion.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.sesion_activa) {
+                        cerrarPantalla();
+                    }
+                });
+        }, 3000);
+        
+        // También cerrar si el usuario recarga la página y la sesión ya está cerrada
+        window.onload = cerrarPantalla;
+        </script>
+        
+        
+       
 </body>
 </html>
